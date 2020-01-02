@@ -20,24 +20,6 @@ namespace Kurs
          
         }
 
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
- 
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NameDatabase_TextChanged(object sender, EventArgs e)
-        {
-       
-        }
-
         private void Next_Click(object sender, EventArgs e)
         {
             this.Hide();
