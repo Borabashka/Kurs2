@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kurs.Classe;
 
-namespace Kurs // hkbn
+namespace Kurs
 {
     public partial class Form1 : Form
     {
