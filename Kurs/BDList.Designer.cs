@@ -32,7 +32,13 @@
             this.NameDataBase = new System.Windows.Forms.TextBox();
             this.ElementsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.BdInfo = new System.Windows.Forms.Label();
+            this.TabInfoPanel = new System.Windows.Forms.Panel();
+            this.TabBut1 = new System.Windows.Forms.Button();
+            this.TabBut2 = new System.Windows.Forms.Button();
+            this.TabBut3 = new System.Windows.Forms.Button();
+            this.BackBut = new System.Windows.Forms.PictureBox();
             this.ElementsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BackBut)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -81,11 +87,85 @@
             this.BdInfo.Text = "Выбранная база данных пуста";
             this.BdInfo.Visible = false;
             // 
+            // TabInfoPanel
+            // 
+            this.TabInfoPanel.BackColor = System.Drawing.Color.RoyalBlue;
+            this.TabInfoPanel.Location = new System.Drawing.Point(324, 68);
+            this.TabInfoPanel.Name = "TabInfoPanel";
+            this.TabInfoPanel.Size = new System.Drawing.Size(367, 3);
+            this.TabInfoPanel.TabIndex = 9;
+            // 
+            // TabBut1
+            // 
+            this.TabBut1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(165)))), ((int)(((byte)(240)))));
+            this.TabBut1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(201)))), ((int)(((byte)(201)))));
+            this.TabBut1.FlatAppearance.BorderSize = 0;
+            this.TabBut1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TabBut1.Font = new System.Drawing.Font("Segoe UI Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TabBut1.Location = new System.Drawing.Point(330, 38);
+            this.TabBut1.Name = "TabBut1";
+            this.TabBut1.Size = new System.Drawing.Size(60, 30);
+            this.TabBut1.TabIndex = 10;
+            this.TabBut1.TabStop = false;
+            this.TabBut1.Text = "Edit BD";
+            this.TabBut1.UseVisualStyleBackColor = false;
+            this.TabBut1.Click += new System.EventHandler(this.TabBut1_Click);
+            // 
+            // TabBut2
+            // 
+            this.TabBut2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(201)))), ((int)(((byte)(201)))));
+            this.TabBut2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(201)))), ((int)(((byte)(201)))));
+            this.TabBut2.FlatAppearance.BorderSize = 0;
+            this.TabBut2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TabBut2.Font = new System.Drawing.Font("Segoe UI Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TabBut2.Location = new System.Drawing.Point(390, 38);
+            this.TabBut2.Name = "TabBut2";
+            this.TabBut2.Size = new System.Drawing.Size(60, 30);
+            this.TabBut2.TabIndex = 11;
+            this.TabBut2.TabStop = false;
+            this.TabBut2.Text = "1";
+            this.TabBut2.UseVisualStyleBackColor = false;
+            this.TabBut2.Click += new System.EventHandler(this.TabBut2_Click);
+            // 
+            // TabBut3
+            // 
+            this.TabBut3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(201)))), ((int)(((byte)(201)))));
+            this.TabBut3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(201)))), ((int)(((byte)(201)))));
+            this.TabBut3.FlatAppearance.BorderSize = 0;
+            this.TabBut3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TabBut3.Font = new System.Drawing.Font("Segoe UI Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TabBut3.Location = new System.Drawing.Point(450, 38);
+            this.TabBut3.Name = "TabBut3";
+            this.TabBut3.Size = new System.Drawing.Size(60, 30);
+            this.TabBut3.TabIndex = 12;
+            this.TabBut3.TabStop = false;
+            this.TabBut3.Text = "2";
+            this.TabBut3.UseVisualStyleBackColor = false;
+            this.TabBut3.Click += new System.EventHandler(this.TabBut3_Click);
+            // 
+            // BackBut
+            // 
+            this.BackBut.Image = global::Kurs.Properties.Resources.Back_Default;
+            this.BackBut.Location = new System.Drawing.Point(655, 6);
+            this.BackBut.Name = "BackBut";
+            this.BackBut.Size = new System.Drawing.Size(30, 30);
+            this.BackBut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BackBut.TabIndex = 13;
+            this.BackBut.TabStop = false;
+            this.BackBut.Click += new System.EventHandler(this.BackBut_Click);
+            this.BackBut.MouseEnter += new System.EventHandler(this.BackBut_Enter);
+            this.BackBut.MouseLeave += new System.EventHandler(this.BackBut_Leave);
+            // 
             // BDList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Kurs.Properties.Resources.d51ea6e460ff3245;
+            this.Controls.Add(this.BackBut);
+            this.Controls.Add(this.TabInfoPanel);
+            this.Controls.Add(this.TabBut1);
+            this.Controls.Add(this.TabBut2);
+            this.Controls.Add(this.TabBut3);
             this.Controls.Add(this.ElementsPanel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.NameDataBase);
@@ -93,6 +173,7 @@
             this.Size = new System.Drawing.Size(694, 426);
             this.ElementsPanel.ResumeLayout(false);
             this.ElementsPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BackBut)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -104,5 +185,10 @@
         private System.Windows.Forms.TextBox NameDataBase;
         private System.Windows.Forms.FlowLayoutPanel ElementsPanel;
         private System.Windows.Forms.Label BdInfo;
+        private System.Windows.Forms.Panel TabInfoPanel;
+        private System.Windows.Forms.Button TabBut1;
+        private System.Windows.Forms.Button TabBut2;
+        public System.Windows.Forms.Button TabBut3;
+        private System.Windows.Forms.PictureBox BackBut;
     }
 }

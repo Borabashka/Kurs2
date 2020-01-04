@@ -11,9 +11,13 @@ namespace Kurs.Classe
 {
     public class UICreator
     {
+        Panel LastChoose;
+        bool first = true;
+        string CurrentData;
 
-        public Panel General(string rowData)
+        public Panel GeneralDataList(string rowData)
         {
+            // данные для заполнения
             string[] Data = rowData.Split(' ');
             string country = Data[0];
             string name = Data[1];
@@ -119,17 +123,38 @@ namespace Kurs.Classe
             edit.Size = new Size(30, 30);
             edit.Image = Resources.right_arrow;
             edit.SizeMode = PictureBoxSizeMode.Zoom;
-            edit.Location = new Point(140, 5);
+            edit.Location = new Point(250, 25);
 
             edit.MouseEnter += new EventHandler(Edit_MouseEnter);
+            edit.MouseLeave += new EventHandler(Edit_MouseLeave);
+            edit.Click += new EventHandler(Edit_Click);
+            
+            if (first)
+            {
+                first = false;
+                LastChoose = MainPanel;
+            }
 
+            
 
-
-
-            // функции кнопок
+            // функции кнопки редактирования
             void Edit_MouseEnter(object sender, EventArgs e)
             {
+                edit.Image = Resources.right_arrow_active;
+            }
+            void Edit_MouseLeave(object sender, EventArgs e)
+            {
+                edit.Image = Resources.right_arrow;
+            }
 
+
+            void Edit_Click(object sender, EventArgs e)
+            {
+                LastChoose.BackColor = Color.FromArgb(255, 65, 105, 225);
+                LastChoose = MainPanel;
+
+                MainPanel.BackColor = Color.FromArgb(255, 32, 75, 204);
+                CurrentData = rowData;
             }
 
 
@@ -147,13 +172,10 @@ namespace Kurs.Classe
             MainPanel.Controls.Add(silverlab);
             MainPanel.Controls.Add(bronzelab);
 
+            MainPanel.Controls.Add(edit);
+
                                                          
             return MainPanel;
-        }
-
-        private string Join()
-        {
-            throw new NotImplementedException();
         }
     }
 }
