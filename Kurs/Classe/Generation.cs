@@ -9,39 +9,34 @@ namespace Kurs.Classe
 {
     class Generation
     {
-        public static Sportsmen Gen(Sportsmen process, string Country, string FirstName, string LastName, string KindSport, string Age)
+        public static Sportsmen Gen(Sportsmen sportsmen, string Country, string FirstName, string LastName, string KindSport, string Age)
         {
-            process.Country = Country;
-            process.FirstName = FirstName;
-            process.LastName = LastName;
-            process.KindSport = KindSport;
-            process.Age = int.Parse(Age);
-            return process;
+            sportsmen.Country = Country;
+            sportsmen.FirstName = FirstName;
+            sportsmen.LastName = LastName;
+            sportsmen.KindSport = KindSport;
+            sportsmen.Age = int.Parse(Age);
+            return sportsmen;
         }
-        public static Sportsmen randGen(Sportsmen process)
+        public static Sportsmen randGen(Sportsmen sportsmen)
         {
-            string[] massCountry = { "Германия", "Франция", "Италия", "Россия", "Япония", "Швеция", "Норвегия" };
             Random rand = new Random();
 
+            string[] massCountry = { "Германия", "Франция", "Италия", "Россия", "Япония", "Швеция", "Норвегия" };
             string[] massFirstName = { "Александр", "Владимир", "Игорь", "Владислав", "Пётр", "Сергей", "Андрей" };
-            Random rand2 = new Random();
-
             string[] massLastName = { "Иванов", "Смирнов", "Кузнецов", "Васильев", "Соколов", "Волков", "Алексеев" };
-            Random rand3 = new Random();
+            string[] massKindSport = { "Биатлон", "Бобслей", "Лыжи"};
 
-            string[] massKindSport = { "Биатлон", "Бобслей"};
-            Random rand4 = new Random();
+            int n = rand.Next(25, 51);
 
-            Random x = new Random();
-            int n = x.Next(25, 50);
 
-            process.Country = massCountry[rand.Next(0, 6)];
-            process.FirstName = massFirstName[rand2.Next(0, 6)];
-            process.LastName = massLastName[rand3.Next(0, 6)];
-            process.KindSport = massKindSport[rand4.Next(0, 1)];
-            process.Age = n;
+            sportsmen.Country = massCountry[rand.Next(0, massCountry.Length)];
+            sportsmen.FirstName = massFirstName[rand.Next(0, massFirstName.Length)];
+            sportsmen.LastName = massLastName[rand.Next(0, massLastName.Length)];
+            sportsmen.KindSport = massKindSport[rand.Next(0, massKindSport.Length)];
+            sportsmen.Age = n;
           
-            return process;
+            return sportsmen;
         }
     }
 }

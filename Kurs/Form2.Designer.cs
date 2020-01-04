@@ -110,7 +110,6 @@
             this.LastName.Name = "LastName";
             this.LastName.Size = new System.Drawing.Size(170, 20);
             this.LastName.TabIndex = 23;
-            this.LastName.TextChanged += new System.EventHandler(this.LastName_TextChanged);
             // 
             // button3
             // 
@@ -175,7 +174,6 @@
             this.NameDatabase.Name = "NameDatabase";
             this.NameDatabase.Size = new System.Drawing.Size(314, 20);
             this.NameDatabase.TabIndex = 15;
-            this.NameDatabase.TextChanged += new System.EventHandler(this.NameDatabase_TextChanged);
             // 
             // textBox7
             // 
@@ -183,7 +181,6 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(170, 20);
             this.textBox7.TabIndex = 14;
-            this.textBox7.TextChanged += new System.EventHandler(this.BronzeMedal_TextChanged);
             // 
             // textBox6
             // 
@@ -191,7 +188,6 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(170, 20);
             this.textBox6.TabIndex = 13;
-            this.textBox6.TextChanged += new System.EventHandler(this.SilverMedal_TextChanged);
             // 
             // textBox5
             // 
@@ -199,7 +195,6 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(170, 20);
             this.textBox5.TabIndex = 12;
-            this.textBox5.TextChanged += new System.EventHandler(this.GoldMedal_TextChanged);
             // 
             // KindSport
             // 
@@ -207,7 +202,6 @@
             this.KindSport.Name = "KindSport";
             this.KindSport.Size = new System.Drawing.Size(170, 20);
             this.KindSport.TabIndex = 11;
-            this.KindSport.TextChanged += new System.EventHandler(this.Sport_TextChanged);
             // 
             // Age
             // 
@@ -215,7 +209,6 @@
             this.Age.Name = "Age";
             this.Age.Size = new System.Drawing.Size(170, 20);
             this.Age.TabIndex = 10;
-            this.Age.TextChanged += new System.EventHandler(this.Age_TextChanged);
             // 
             // FirstName
             // 
@@ -223,7 +216,6 @@
             this.FirstName.Name = "FirstName";
             this.FirstName.Size = new System.Drawing.Size(170, 20);
             this.FirstName.TabIndex = 9;
-            this.FirstName.TextChanged += new System.EventHandler(this.Initials_TextChanged);
             // 
             // Country
             // 
@@ -231,7 +223,6 @@
             this.Country.Name = "Country";
             this.Country.Size = new System.Drawing.Size(170, 20);
             this.Country.TabIndex = 8;
-            this.Country.TextChanged += new System.EventHandler(this.Country_TextChanged);
             // 
             // label8
             // 

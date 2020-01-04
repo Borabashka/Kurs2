@@ -17,20 +17,25 @@ namespace Kurs
         public Form1()
         {
             InitializeComponent();
-         
+            InitializeControls();
         }
+
+        BDList bdlist = new BDList();
+        public void InitializeControls()
+        {
+            panel1.BackColor = Color.FromArgb(125, 0, 0, 0);
+
+            // настройка второй формы
+            bdlist.Location = new Point(0, 0);
+            bdlist.Visible = false;
+            this.Controls.Add(bdlist);
+            bdlist.BringToFront();
+        }
+
 
         private void Next_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form2 fr2 = new Form2();
-            fr2.Show();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            panel1.BackColor = Color.FromArgb(125,0,0,0);
-
+            bdlist.Visible = true;
         }
 
         private void DeleteDatabase_Click(object sender, EventArgs e)
@@ -41,7 +46,6 @@ namespace Kurs
                 NameDatabase.Clear();
             }
         }
-
         private void CreateDatabase_Click(object sender, EventArgs e)
         {
             if (File.Exists(NameDatabase.Text + ".txt") == false)

@@ -58,47 +58,6 @@ namespace Kurs
             Form1 kb1 = new Form1();
             kb1.Show();
         }
-
-        private void NameDatabase_TextChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void Country_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Initials_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Age_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Sport_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GoldMedal_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SilverMedal_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BronzeMedal_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
        
 
         private void Random_Click(object sender, EventArgs e)
@@ -121,11 +80,6 @@ namespace Kurs
                
                 
             }
-        }
-
-        private void LastName_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

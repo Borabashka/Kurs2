@@ -8,7 +8,11 @@ using System.Windows.Forms;
 
 namespace Kurs.Classe
 {
-    class Class2
+    class Functions
     {
+        public void hhh()
+        {
+
+        }
     }
 }

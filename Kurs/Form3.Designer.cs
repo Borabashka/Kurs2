@@ -99,7 +99,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 28);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Date base";
+            this.label1.Text = "Data base";
             // 
             // panel1
             // 

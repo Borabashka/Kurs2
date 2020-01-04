@@ -14,6 +14,9 @@ namespace Kurs.Classe
         public string LastName { get; set; }
         public string KindSport { get; set; }
         public int Age { get; set; }
+        public int GoldMedals { get; set; }
+        public int SilverMedals { get; set; }
+        public int BronzeMedals { get; set; }
     }
 
 
