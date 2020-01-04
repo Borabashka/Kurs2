@@ -13,7 +13,7 @@ namespace Kurs.Classe
         {
             List<string> bdArray = new List<string>();
 
-            string[] rowData = File.ReadAllText(path).Trim().Split('\n');
+            string[] rowData = File.ReadAllText(path, Encoding.GetEncoding("windows-1251")).Trim().Split('\n');
             foreach (string item in rowData)
             {
                 bdArray.Add(item);

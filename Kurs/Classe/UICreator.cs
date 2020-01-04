@@ -121,7 +121,16 @@ namespace Kurs.Classe
             edit.SizeMode = PictureBoxSizeMode.Zoom;
             edit.Location = new Point(140, 5);
 
+            edit.MouseEnter += new EventHandler(Edit_MouseEnter);
 
+
+
+
+            // функции кнопок
+            void Edit_MouseEnter(object sender, EventArgs e)
+            {
+
+            }
 
 
 
