@@ -13,12 +13,14 @@ namespace Kurs.Classe
     {
         Panel LastChoose;
         bool first = true;
+
+        Tab1 tab1 = new Tab1();
         string CurrentData;
 
         public Panel GeneralDataList(string rowData)
         {
             // данные для заполнения
-            string[] Data = rowData.Split(' ');
+            string[] Data = rowData.Split('_');
             string country = Data[0];
             string name = Data[1];
             string surname = Data[2];
@@ -41,7 +43,7 @@ namespace Kurs.Classe
             countrylab.Text = country;
             countrylab.Width = 130;
             countrylab.ForeColor = Color.White;
-            countrylab.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+            countrylab.Font = new Font("Segoe UI Light", 10, FontStyle.Regular);
             countrylab.Location = new Point(1, 1);
 
             // фамилия + имя + возраст
@@ -49,7 +51,7 @@ namespace Kurs.Classe
             namelab.Text = surname + " " + name;
             namelab.Width = 130;
             namelab.ForeColor = Color.White;
-            namelab.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+            namelab.Font = new Font("Segoe UI Light", 10, FontStyle.Regular);
             namelab.Location = new Point(1, 20);
 
             // возраст
@@ -57,7 +59,7 @@ namespace Kurs.Classe
             agelab.Text = "Возраст " + age;
             agelab.Width = 130;
             agelab.ForeColor = Color.White;
-            agelab.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+            agelab.Font = new Font("Segoe UI Light", 10, FontStyle.Regular);
             agelab.Location = new Point(1, 39);
 
             // возраст
@@ -65,7 +67,7 @@ namespace Kurs.Classe
             sportlab.Text = sport;
             sportlab.Width = 130;
             sportlab.ForeColor = Color.White;
-            sportlab.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+            sportlab.Font = new Font("Segoe UI Light", 10, FontStyle.Regular);
             sportlab.Location = new Point(1, 58);
 
             // золото
@@ -81,7 +83,7 @@ namespace Kurs.Classe
             goldlab.Width = 30;
             goldlab.Height = 15;
             goldlab.ForeColor = Color.White;
-            goldlab.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+            goldlab.Font = new Font("Segoe UI Light", 10, FontStyle.Regular);
             goldlab.Location = new Point(140, 40);
 
 
@@ -98,7 +100,7 @@ namespace Kurs.Classe
             silverlab.Width = 30;
             silverlab.Height = 15;
             silverlab.ForeColor = Color.White;
-            silverlab.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+            silverlab.Font = new Font("Segoe UI Light", 10, FontStyle.Regular);
             silverlab.Location = new Point(180, 40);
 
 
@@ -115,7 +117,7 @@ namespace Kurs.Classe
             bronzelab.Width = 30;
             bronzelab.Height = 15;
             bronzelab.ForeColor = Color.White;
-            bronzelab.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+            bronzelab.Font = new Font("Segoe UI Light", 10, FontStyle.Regular);
             bronzelab.Location = new Point(220, 40);
 
             // кнопка выбора
@@ -154,6 +156,7 @@ namespace Kurs.Classe
                 LastChoose = MainPanel;
 
                 MainPanel.BackColor = Color.FromArgb(255, 32, 75, 204);
+
                 CurrentData = rowData;
             }
 
@@ -177,5 +180,7 @@ namespace Kurs.Classe
                                                          
             return MainPanel;
         }
+
+
     }
 }

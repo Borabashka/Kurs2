@@ -31,14 +31,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.NameDataBase = new System.Windows.Forms.TextBox();
             this.ElementsPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.BdInfo = new System.Windows.Forms.Label();
             this.TabInfoPanel = new System.Windows.Forms.Panel();
             this.TabBut1 = new System.Windows.Forms.Button();
             this.TabBut2 = new System.Windows.Forms.Button();
             this.TabBut3 = new System.Windows.Forms.Button();
             this.BackBut = new System.Windows.Forms.PictureBox();
-            this.ElementsPanel.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BdInfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.BackBut)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -59,7 +62,7 @@
             this.NameDataBase.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameDataBase.Location = new System.Drawing.Point(7, 34);
             this.NameDataBase.Name = "NameDataBase";
-            this.NameDataBase.Size = new System.Drawing.Size(276, 29);
+            this.NameDataBase.Size = new System.Drawing.Size(286, 29);
             this.NameDataBase.TabIndex = 6;
             this.NameDataBase.TabStop = false;
             this.NameDataBase.TextChanged += new System.EventHandler(this.NameDatabase_TextChanged);
@@ -68,24 +71,10 @@
             // 
             this.ElementsPanel.AutoScroll = true;
             this.ElementsPanel.BackColor = System.Drawing.Color.White;
-            this.ElementsPanel.Controls.Add(this.BdInfo);
             this.ElementsPanel.Location = new System.Drawing.Point(7, 68);
             this.ElementsPanel.Name = "ElementsPanel";
-            this.ElementsPanel.Size = new System.Drawing.Size(311, 354);
+            this.ElementsPanel.Size = new System.Drawing.Size(286, 354);
             this.ElementsPanel.TabIndex = 8;
-            // 
-            // BdInfo
-            // 
-            this.BdInfo.AutoSize = true;
-            this.BdInfo.BackColor = System.Drawing.Color.Transparent;
-            this.BdInfo.Font = new System.Drawing.Font("Segoe UI Light", 12F);
-            this.BdInfo.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.BdInfo.Location = new System.Drawing.Point(3, 0);
-            this.BdInfo.Name = "BdInfo";
-            this.BdInfo.Size = new System.Drawing.Size(223, 21);
-            this.BdInfo.TabIndex = 9;
-            this.BdInfo.Text = "Выбранная база данных пуста";
-            this.BdInfo.Visible = false;
             // 
             // TabInfoPanel
             // 
@@ -156,24 +145,59 @@
             this.BackBut.MouseEnter += new System.EventHandler(this.BackBut_Enter);
             this.BackBut.MouseLeave += new System.EventHandler(this.BackBut_Leave);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.BdInfo);
+            this.panel1.Location = new System.Drawing.Point(7, 68);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(286, 354);
+            this.panel1.TabIndex = 14;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Kurs.Properties.Resources.smile;
+            this.pictureBox1.Location = new System.Drawing.Point(73, 129);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(118, 119);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
+            // BdInfo
+            // 
+            this.BdInfo.AutoSize = true;
+            this.BdInfo.BackColor = System.Drawing.Color.Transparent;
+            this.BdInfo.Font = new System.Drawing.Font("Segoe UI Light", 12F);
+            this.BdInfo.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.BdInfo.Location = new System.Drawing.Point(18, 23);
+            this.BdInfo.Name = "BdInfo";
+            this.BdInfo.Size = new System.Drawing.Size(223, 21);
+            this.BdInfo.TabIndex = 10;
+            this.BdInfo.Text = "Выбранная база данных пуста";
+            this.BdInfo.Visible = false;
+            // 
             // BDList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Kurs.Properties.Resources.d51ea6e460ff3245;
+            this.Controls.Add(this.ElementsPanel);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.BackBut);
             this.Controls.Add(this.TabInfoPanel);
             this.Controls.Add(this.TabBut1);
             this.Controls.Add(this.TabBut2);
             this.Controls.Add(this.TabBut3);
-            this.Controls.Add(this.ElementsPanel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.NameDataBase);
             this.Name = "BDList";
             this.Size = new System.Drawing.Size(694, 426);
-            this.ElementsPanel.ResumeLayout(false);
-            this.ElementsPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BackBut)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,11 +208,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox NameDataBase;
         private System.Windows.Forms.FlowLayoutPanel ElementsPanel;
-        private System.Windows.Forms.Label BdInfo;
         private System.Windows.Forms.Panel TabInfoPanel;
         private System.Windows.Forms.Button TabBut1;
         private System.Windows.Forms.Button TabBut2;
         public System.Windows.Forms.Button TabBut3;
         private System.Windows.Forms.PictureBox BackBut;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label BdInfo;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

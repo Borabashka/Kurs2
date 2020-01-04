@@ -21,5 +21,7 @@ namespace Kurs.Classe
 
             return bdArray;
         }
+
+
     }
 }

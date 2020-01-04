@@ -63,7 +63,7 @@ namespace Kurs
         private void Random_Click(object sender, EventArgs e)
         {
             Sportsmen process = new Sportsmen();
-            DataBase.New(Generation.randGen(process), NameDatabase.Text);
+            //DataBase.New(Classe.Generator(process), NameDatabase.Text);
         }
 
         private void Generate_Click(object sender, EventArgs e)
@@ -71,7 +71,7 @@ namespace Kurs
             Sportsmen process = new Sportsmen();
             if (Country.Text != "" && FirstName.Text != "" && LastName.Text != "" && KindSport.Text != "" && Age.Text != "")
             {
-                DataBase.New(Generation.Gen(process, Country.Text, FirstName.Text, LastName.Text, KindSport.Text, Age.Text), NameDatabase.Text);
+                //DataBase.New(Classe.Generator.Gen(process, Country.Text, FirstName.Text, LastName.Text, KindSport.Text, Age.Text), NameDatabase.Text);
                 Country.Clear();
                 FirstName.Clear();
                 LastName.Clear();

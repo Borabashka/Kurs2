@@ -32,16 +32,19 @@ namespace Kurs
 
         public void DeleteList()
         {
+            ElementsPanel.Width = 286;
+            ElementsPanel.Visible = false;
+
             foreach (Panel item in ElementsPanel.Controls.OfType<Panel>())
             {
                 ElementsPanel.Controls.Remove(item);
+                Application.DoEvents();
             }
 
             if ((ElementsPanel.Controls.OfType<Panel>()).Count<Panel>() > 0)
             {
                 DeleteList();
             }
-
         }
 
         public void CreatePanel_General()
@@ -51,7 +54,12 @@ namespace Kurs
             foreach (string item in bdArray)
             {
                 ElementsPanel.Controls.Add(uICreator.GeneralDataList(item));
+                Application.DoEvents();
             }
+
+            if (bdArray.Count > 4) ElementsPanel.Width += 20;
+
+            ElementsPanel.Visible = true;
         }
 
         private void NameDatabase_TextChanged(object sender, EventArgs e)
@@ -61,12 +69,15 @@ namespace Kurs
 
             if (File.Exists(NameDataBase.Text + ".txt"))
             {
+                tab1.NewBut.Enabled = true;
+
                 bdArray = fileWorker.ReadBD(NameDataBase.Text + ".txt");
 
                 if (bdArray.Count <= 1)
                 {
                     BdInfo.Text = "Выбранная база данных пуста";
                     BdInfo.Visible = true;
+                    ElementsPanel.Visible = false;
                 }
                 else
                 {
@@ -78,6 +89,9 @@ namespace Kurs
             {
                 BdInfo.Text = "Такой базы данных не существует";
                 BdInfo.Visible = true;
+
+                tab1.NewBut.Enabled = false;
+                ElementsPanel.Visible = false;
             }
         }
 
@@ -165,6 +179,7 @@ namespace Kurs
         private void BackBut_Click(object sender, EventArgs e)
         {
             Visible = false;
+            NameDataBase.Text = "";
         }
         private void BackBut_Enter(object sender, EventArgs e)
         {
