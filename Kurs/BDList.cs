@@ -82,6 +82,7 @@ namespace Kurs
         }
 
         #region TabControl
+        //CustomTabControl
         Tab1 tab1 = new Tab1();
         Tab2 tab2 = new Tab2();
         Tab3 tab3 = new Tab3();
@@ -115,9 +116,10 @@ namespace Kurs
             (CurrentTabSender as Button).BackColor = Color.FromArgb(255, 201, 201, 201);
 
             // reset transform
+            CurrentTabSender.Location = new Point(CurrentTabSender.Location.X + 2, CurrentTabSender.Location.Y + 2);
             CurrentTabSender.Height = CurrentTabSender.Height - 2;
             CurrentTabSender.Width = CurrentTabSender.Width - 4;
-            CurrentTabSender.Location = new Point(CurrentTabSender.Location.X + 2, CurrentTabSender.Location.Y + 2);
+            Application.DoEvents();
 
             //reset tab panel
             tab1.Visible = false;
@@ -132,6 +134,7 @@ namespace Kurs
             CurrentTabSender.Height = CurrentTabSender.Height + 2;
             CurrentTabSender.Width = CurrentTabSender.Width + 4;
             CurrentTabSender.Location = new Point(CurrentTabSender.Location.X - 2, CurrentTabSender.Location.Y - 2);
+            Application.DoEvents();
         }
 
         // buttons click
@@ -156,7 +159,6 @@ namespace Kurs
 
             Transform(sender);
         }
-
         #endregion
 
         #region Back Button
