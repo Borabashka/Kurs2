@@ -12,7 +12,7 @@ namespace Kurs.Classe
     class DataBase
     {
         public static string Return(string path)    //вывод бд + //вывод базы данных
-        {//
+        {
             string list = "Страна-участница  Фамилия_и_имя_участника Возраст  Вид_спорта" + "\n";
             List<string> lines = new List<string>();
             List<Sportsmen> process = Reader.Read(path);
