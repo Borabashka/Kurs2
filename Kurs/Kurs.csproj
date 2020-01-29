@@ -53,6 +53,7 @@
       <DependentUpon>BDList.cs</DependentUpon>
     </Compile>
     <Compile Include="Classe\FileWorker.cs" />
+    <Compile Include="Classe\Vars.cs" />
     <Compile Include="Classe\Reader.cs" />
     <Compile Include="Classe\DataBase.cs" />
     <Compile Include="Classe\Functions.cs" />

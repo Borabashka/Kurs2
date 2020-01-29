@@ -90,7 +90,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(515, 423);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label10
             // 
@@ -166,7 +165,6 @@
             this.label9.Size = new System.Drawing.Size(485, 44);
             this.label9.TabIndex = 16;
             this.label9.Text = "Введите данные для существующего процесса или создайте\r\nслучайные данные";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // NameDatabase
             // 
@@ -290,7 +288,6 @@
             this.label3.Size = new System.Drawing.Size(121, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Имя участника";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -313,7 +310,6 @@
             this.label1.Size = new System.Drawing.Size(74, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Процесс";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Random
             // 
@@ -348,7 +344,6 @@
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

@@ -22,6 +22,11 @@ namespace Kurs.Classe
             return bdArray;
         }
 
+        public void SaveBD(string path, List<string> bdArray)
+        {
+
+        }
+
 
     }
 }

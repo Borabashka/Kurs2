@@ -30,6 +30,7 @@ namespace Kurs
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,6 +51,7 @@ namespace Kurs
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.SelectCheck = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -206,6 +208,7 @@ namespace Kurs
             this.SaveBut.TabStop = false;
             this.SaveBut.Text = "Save";
             this.SaveBut.UseVisualStyleBackColor = false;
+            this.SaveBut.Click += new System.EventHandler(this.SaveBut_Click);
             // 
             // RandomBut
             // 
@@ -227,36 +230,39 @@ namespace Kurs
             // 
             this.Gold.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Gold.ForeColor = System.Drawing.Color.Black;
-            this.Gold.Location = new System.Drawing.Point(56, 208);
+            this.Gold.Location = new System.Drawing.Point(79, 210);
             this.Gold.Name = "Gold";
             this.Gold.Size = new System.Drawing.Size(25, 27);
             this.Gold.TabIndex = 25;
             this.Gold.TabStop = false;
+            this.Gold.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Silver
             // 
             this.Silver.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Silver.ForeColor = System.Drawing.Color.Black;
-            this.Silver.Location = new System.Drawing.Point(164, 208);
+            this.Silver.Location = new System.Drawing.Point(187, 210);
             this.Silver.Name = "Silver";
             this.Silver.Size = new System.Drawing.Size(25, 27);
             this.Silver.TabIndex = 26;
             this.Silver.TabStop = false;
+            this.Silver.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Bronze
             // 
             this.Bronze.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Bronze.ForeColor = System.Drawing.Color.Black;
-            this.Bronze.Location = new System.Drawing.Point(272, 208);
+            this.Bronze.Location = new System.Drawing.Point(295, 210);
             this.Bronze.Name = "Bronze";
             this.Bronze.Size = new System.Drawing.Size(25, 27);
             this.Bronze.TabIndex = 27;
             this.Bronze.TabStop = false;
+            this.Bronze.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Kurs.Properties.Resources.bronze;
-            this.pictureBox3.Location = new System.Drawing.Point(236, 205);
+            this.pictureBox3.Location = new System.Drawing.Point(259, 207);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(30, 30);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -266,7 +272,7 @@ namespace Kurs
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Kurs.Properties.Resources.silver;
-            this.pictureBox2.Location = new System.Drawing.Point(128, 205);
+            this.pictureBox2.Location = new System.Drawing.Point(151, 207);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(30, 30);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -276,12 +282,16 @@ namespace Kurs
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Kurs.Properties.Resources.gold;
-            this.pictureBox1.Location = new System.Drawing.Point(20, 205);
+            this.pictureBox1.Location = new System.Drawing.Point(43, 207);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
+            // 
+            // SelectCheck
+            // 
+            this.SelectCheck.Tick += new System.EventHandler(this.SelectCheck_Tick);
             // 
             // Tab1
             // 
@@ -315,6 +325,7 @@ namespace Kurs
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
@@ -328,7 +339,6 @@ namespace Kurs
         private System.Windows.Forms.TextBox NameText;
         private System.Windows.Forms.TextBox Surname;
         private System.Windows.Forms.TextBox Age;
-        private System.Windows.Forms.TextBox Sport;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -339,5 +349,7 @@ namespace Kurs
         public System.Windows.Forms.Button DelBut;
         public System.Windows.Forms.Button SaveBut;
         public System.Windows.Forms.Button RandomBut;
+        public TextBox Sport;
+        public Timer SelectCheck;
     }
 }

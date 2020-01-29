@@ -17,41 +17,16 @@ namespace Kurs
         public Form2()
         {
             InitializeComponent();
-        }
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
             panel1.BackColor = Color.FromArgb(125, 0, 0, 0);
-
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        // switch form buttons
         private void Next_Click(object sender, EventArgs e)
         {
             this.Hide();
             Form3 fr2 = new Form3();
             fr2.Show();
         }
-
         private void Last_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -60,12 +35,12 @@ namespace Kurs
         }
        
 
+        // bd actions buttons
         private void Random_Click(object sender, EventArgs e)
         {
             Sportsmen process = new Sportsmen();
             //DataBase.New(Classe.Generator(process), NameDatabase.Text);
         }
-
         private void Generate_Click(object sender, EventArgs e)
         {
             Sportsmen process = new Sportsmen();

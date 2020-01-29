@@ -11,11 +11,11 @@ namespace Kurs.Classe
 {
     public class UICreator
     {
-        Panel LastChoose;
-        bool first = true;
+        public bool first = true;
 
-        Tab1 tab1 = new Tab1();
-        string CurrentData;
+        // отслеживание текущего элемента
+        Panel CurrentChoose;
+        public int number = 0;
 
         public Panel GeneralDataList(string rowData)
         {
@@ -30,7 +30,10 @@ namespace Kurs.Classe
             string silver = Data[6];
             string bronze = Data[7];
 
+            int thisNumber = number;
+            number++;
 
+            #region Creating elements
             // главная панель
             Panel MainPanel = new Panel();
             MainPanel.Width = 280;
@@ -130,11 +133,15 @@ namespace Kurs.Classe
             edit.MouseEnter += new EventHandler(Edit_MouseEnter);
             edit.MouseLeave += new EventHandler(Edit_MouseLeave);
             edit.Click += new EventHandler(Edit_Click);
-            
+            #endregion
+
             if (first)
             {
                 first = false;
-                LastChoose = MainPanel;
+                CurrentChoose = MainPanel;
+
+                MainPanel.BackColor = Color.FromArgb(255, 32, 75, 204);
+                Edit_Click(null, null);
             }
 
             
@@ -148,16 +155,15 @@ namespace Kurs.Classe
             {
                 edit.Image = Resources.right_arrow;
             }
-
-
             void Edit_Click(object sender, EventArgs e)
             {
-                LastChoose.BackColor = Color.FromArgb(255, 65, 105, 225);
-                LastChoose = MainPanel;
+                CurrentChoose.BackColor = Color.FromArgb(255, 65, 105, 225);
+                CurrentChoose = MainPanel;
 
                 MainPanel.BackColor = Color.FromArgb(255, 32, 75, 204);
 
-                CurrentData = rowData;
+                // сохранение данных о текущем элементе
+                Vars.CurrentNumber = thisNumber;
             }
 
 

@@ -9,6 +9,32 @@ namespace Kurs.Classe
 {
     class Generator
     {
+        #region InfoBase
+
+        string[] countryArray = { "Japan", "Germany", "Russian", "French", "Gr. Britain", "USA", "Canada" };
+
+        string[] JapanNameArray = { "Ai", "Aiko", "Akako", "Akane", "Akemi", "Aki", "Chika", "Chikako ", "Cho ", "Dai ", "Hoshi ", "Akeno ", "Akiyama ", "Fudo ", "Naruto ", "Sasuke ", "Botan ", "Daiki ", "Haru ", "Jiro ", "Kanaye ", "Kano ", "Kazuo ", "Rafu ", "Nikk" };
+        string[] JapanSurnameArray = { "Sato", "Sudjuki", "Ito", "Yamat", "Kato", "Sasaki", "Uchiha", "Uzumaki", "Yamaguti", "Hayasi", "Abe", "Goto", "Ocade", "Ono", "Takano", "Seke", "Homma" };
+
+        string[] GermanyNameArray = { "Adolf", "Ben", "Paul", "Jonas", "Elias", "Leon", "Finn", "Fynn", "Noah", "Luis", "Luke", "Felix", "Luca", "Maximilian", "Henry", "Max", "Oskar", "Emil", "Liam", "Jacob", "Moritz", "Anton", "Mia", "Emma", "Sofia", "Lina", "Mila", "Amelie", "Lilly" };
+        string[] GermanySurnameArray = { "Miller", "Scholz", "Tailor", "Weaver", "Baker", "Koch", "Bauer", "Richter", "Klein", "Wolf", "Schwarz", "Lange", "Werner", "Krause", "Maier", "Jung", "Hneitler", "Friedrich", "Frank", "Roth", "Beck", "Lorenz", "Franke" };
+
+        string[] RussianNameArray = { "Alexander", "Alexey", "Anton", "Andrei", "Artur", "Bogdan", "Boris", "Valeriy", "Vitaliy", "Gleb", "Grigoriy", "Denis", "Zahar", "Ivan", "Ignat", "Igor", "Kirill", "Oksana", "Lara", "Olesya", "Yuliya" };
+        string[] RussianSurnameArray = { "Smirnov", "Popov", "Kuznecov", "Sobolev", "Maslov", "Moiseev", "Shukin", "Sidorov", "Egorov", "Savin", "Guseev", "Titon", "Shilov", "Mishin", "Phokin", "Nosov" };
+
+        string[] FrenchNameArray = { "Arno", "Jean", "Michel", "Alain", "Patrick", "Nicolas", "Christian", "Daniel", "Pierre", "Aim", "Bles", "Gustav", "Camill", "Rafael", "Natali", "Lulu", "Lor", "Clar", "Adel", "Anet", "Agata" };
+        string[] FrenchSurnameArray = { "Azule", "Arno", "Arkur", "Arias", "Buzho", "Bosh", "Benua", "Zharr", "Dumash", "Labule", "Ledu", "Mereli", "Peti", "Reber" };
+
+        string[] EnNameArray = { "Amelia", "Olivia", "Oliver", "Jack", "Harry", "Jacob", "Charlie", "Thomas", "Oscar", "William", "James", "George", "Alfie", "Leo", "Henry", "Max", "Jake", "Lola", "Holly", "Lilly", "Rosie" };
+        string[] EnSurnameArray = { "Abramson", "Adderiy", "Howard", "Holiday", "Jeff", "Jenkin", "Batton", "Alsopp", "Andrews", "Arnold", "Kelly", "Page", "Day", "Derrick", "Ralphs", "Ryder", "Young", "Haig" };
+
+        string[] CanadaNameArray = { "Carter", "Daniel", "Felix", "Gabriel", "Jacob", "Antoine", "Alexis", "Liam", "Mason", "Noah", "Olivier", "Owen", "Lucas", "Tyler", "William", "Hailey", "Jessica", "Lea" };
+        string[] CanadaSurnameArray = { "Abramson", "Adderiy", "Howard", "Holiday", "Jeff", "Jenkin", "Batton", "Alsopp", "Andrews", "Arnold", "Kelly", "Page", "Day", "Derrick", "Ralphs", "Ryder", "Young", "Haig" };
+
+        string[] Sport = { "Biathlon", "Bobsleigh", "Curling", "Snowboard", "Ski race", "Skiing", };
+        #endregion
+
+
         public List<string> RandomGenElement()
         {
             // 0-Country 1-Name 2-Surname 3-Age 4-Sport 5-Gold 6-Silver 7-Bronze
@@ -23,29 +49,6 @@ namespace Kurs.Classe
             newElement.Add("");
 
             Random random = new Random();
-
-            string[] countryArray = {"Japan" , "Germany", "Russian", "French", "Gr. Britain", "USA", "Canada"};
-
-            string[] JapanNameArray = { "Ai", "Aiko", "Akako", "Akane", "Akemi", "Aki", "Chika", "Chikako ", "Cho ", "Dai ", "Hoshi ", "Akeno ", "Akiyama ", "Fudo ", "Naruto ", "Sasuke ", "Botan ", "Daiki ", "Haru ", "Jiro ", "Kanaye ", "Kano ", "Kazuo ", "Rafu ", "Nikk" };
-            string[] JapanSurnameArray = { "Sato", "Sudjuki", "Ito", "Yamat", "Kato", "Sasaki", "Uchiha", "Uzumaki", "Yamaguti", "Hayasi", "Abe", "Goto", "Ocade", "Ono", "Takano", "Seke", "Homma" };
-
-            string[] GermanyNameArray = { "Adolf", "Ben" ,"Paul" ,"Jonas" ,"Elias" ,"Leon" ,"Finn" ,"Fynn" ,"Noah" ,"Luis" ,"Luke" ,"Felix" ,"Luca" ,"Maximilian" ,"Henry" ,"Max" ,"Oskar" ,"Emil" ,"Liam" ,"Jacob" ,"Moritz" ,"Anton" ,"Mia" ,"Emma" ,"Sofia" ,"Lina" ,"Mila" ,"Amelie" ,"Lilly" };
-            string[] GermanySurnameArray = { "Miller", "Scholz", "Tailor", "Weaver", "Baker", "Koch", "Bauer", "Richter", "Klein", "Wolf", "Schwarz", "Lange", "Werner", "Krause", "Maier", "Jung", "Hneitler", "Friedrich", "Frank", "Roth", "Beck", "Lorenz", "Franke" };
-
-            string[] RussianNameArray = { "Alexander", "Alexey", "Anton", "Andrei", "Artur", "Bogdan", "Boris", "Valeriy", "Vitaliy", "Gleb", "Grigoriy", "Denis", "Zahar", "Ivan", "Ignat", "Igor", "Kirill", "Oksana", "Lara", "Olesya", "Yuliya" };
-            string[] RussianSurnameArray = { "Smirnov", "Popov", "Kuznecov", "Sobolev", "Maslov", "Moiseev", "Shukin", "Sidorov", "Egorov", "Savin", "Guseev", "Titon", "Shilov", "Mishin", "Phokin", "Nosov" };
-
-            string[] FrenchNameArray = { "Arno", "Jean", "Michel", "Alain", "Patrick", "Nicolas", "Christian", "Daniel", "Pierre", "Aim", "Bles", "Gustav", "Camill", "Rafael", "Natali", "Lulu", "Lor", "Clar", "Adel", "Anet", "Agata" };
-            string[] FrenchSurnameArray = { "Azule", "Arno", "Arkur", "Arias", "Buzho", "Bosh", "Benua", "Zharr", "Dumash", "Labule", "Ledu", "Mereli", "Peti", "Reber" };
-
-            string[] EnNameArray = { "Amelia", "Olivia", "Oliver", "Jack", "Harry", "Jacob", "Charlie", "Thomas", "Oscar", "William", "James", "George", "Alfie", "Leo", "Henry", "Max", "Jake", "Lola", "Holly", "Lilly", "Rosie" };
-            string[] EnSurnameArray = { "Abramson", "Adderiy", "Howard", "Holiday", "Jeff", "Jenkin", "Batton", "Alsopp", "Andrews", "Arnold", "Kelly", "Page", "Day", "Derrick", "Ralphs", "Ryder", "Young", "Haig" };
-
-            string[] CanadaNameArray = { "Carter", "Daniel", "Felix", "Gabriel", "Jacob", "Antoine", "Alexis", "Liam", "Mason", "Noah", "Olivier", "Owen", "Lucas", "Tyler", "William", "Hailey", "Jessica", "Lea" };
-            string[] CanadaSurnameArray = { "Abramson", "Adderiy", "Howard", "Holiday", "Jeff", "Jenkin", "Batton", "Alsopp", "Andrews", "Arnold", "Kelly", "Page", "Day", "Derrick", "Ralphs", "Ryder", "Young", "Haig" };
-
-            string[] Sport = { "Biathlon", "Bobsleigh", "Curling", "Snowboard", "Ski race", "Skiing", };
-
 
             newElement[0] = countryArray[random.Next(0, countryArray.Length)];
             switch (newElement[0])

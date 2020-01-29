@@ -15,10 +15,7 @@ namespace Kurs
     public partial class BDList : UserControl
     {
         FileWorker fileWorker = new FileWorker();
-        UICreator uICreator = new UICreator();
-
-        List<string> bdArray = new List<string>(); // построчный массив базы данных
-
+        UICreator ui = new UICreator();
 
         public BDList()
         {
@@ -51,15 +48,19 @@ namespace Kurs
         {
             DeleteList();
 
-            foreach (string item in bdArray)
+            foreach (string item in Vars.bdArray)
             {
-                ElementsPanel.Controls.Add(uICreator.GeneralDataList(item));
+                ElementsPanel.Controls.Add(ui.GeneralDataList(item));
                 Application.DoEvents();
             }
 
-            if (bdArray.Count > 4) ElementsPanel.Width += 20;
+            if (Vars.bdArray.Count > 4) ElementsPanel.Width += 20;
 
             ElementsPanel.Visible = true;
+
+            tab1.SelectCheck.Enabled = true;
+            ui.number = 0;
+            ui.first = true;
         }
 
         private void NameDatabase_TextChanged(object sender, EventArgs e)
@@ -71,13 +72,14 @@ namespace Kurs
             {
                 tab1.NewBut.Enabled = true;
 
-                bdArray = fileWorker.ReadBD(NameDataBase.Text + ".txt");
+                Vars.bdArray = fileWorker.ReadBD(NameDataBase.Text + ".txt");
 
-                if (bdArray.Count <= 1)
+                if (Vars.bdArray.Count <= 1)
                 {
                     BdInfo.Text = "Выбранная база данных пуста";
                     BdInfo.Visible = true;
                     ElementsPanel.Visible = false;
+                    tab1.SelectCheck.Enabled = false;
                 }
                 else
                 {
@@ -92,6 +94,7 @@ namespace Kurs
 
                 tab1.NewBut.Enabled = false;
                 ElementsPanel.Visible = false;
+                tab1.SelectCheck.Enabled = false;
             }
         }
 
@@ -102,6 +105,8 @@ namespace Kurs
         Tab3 tab3 = new Tab3();
 
         Button CurrentTabSender;
+
+
 
         void InitializeTabControl()
         {
@@ -131,8 +136,7 @@ namespace Kurs
 
             // reset transform
             CurrentTabSender.Location = new Point(CurrentTabSender.Location.X + 2, CurrentTabSender.Location.Y + 2);
-            CurrentTabSender.Height = CurrentTabSender.Height - 2;
-            CurrentTabSender.Width = CurrentTabSender.Width - 4;
+            CurrentTabSender.Size = new Size(60, 30);
             Application.DoEvents();
 
             //reset tab panel
@@ -145,8 +149,8 @@ namespace Kurs
             CurrentTabSender = (sender as Button);
             CurrentTabSender.BackColor = Color.FromArgb(255, 123, 165, 240);
             CurrentTabSender.BringToFront();
-            CurrentTabSender.Height = CurrentTabSender.Height + 2;
-            CurrentTabSender.Width = CurrentTabSender.Width + 4;
+            CurrentTabSender.Size = new Size(64, 32);
+
             CurrentTabSender.Location = new Point(CurrentTabSender.Location.X - 2, CurrentTabSender.Location.Y - 2);
             Application.DoEvents();
         }
