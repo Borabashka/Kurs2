@@ -13,18 +13,23 @@ namespace Kurs.Classe
         {
             List<string> bdArray = new List<string>();
 
-            string[] rowData = File.ReadAllText(path, Encoding.UTF8).Trim().Split('\n');
-            foreach (string item in rowData)
+            string rowData1 = File.ReadAllText(path, Encoding.UTF8).Trim();
+
+            if (rowData1 != "")
             {
-                bdArray.Add(item);
+                string[] rowData2 = rowData1.Trim().Split('\n');
+                foreach (string item in rowData2)
+                {
+                    bdArray.Add(item);
+                }
             }
 
             return bdArray;
         }
 
-        public void SaveBD(string path, List<string> bdArray)
+        public void SaveBD(string path)
         {
-
+            File.WriteAllText(path, String.Join("\n", Vars.bdArray));
         }
 
 

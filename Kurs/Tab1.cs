@@ -28,17 +28,17 @@ namespace Kurs
         }
         public void SelectElement()
         {
-            string[] nnnn = Vars.bdArray[Vars.CurrentNumber].Split('_');
+            string[] selectedInfo = Vars.bdArray[Vars.CurrentNumber].Split('_');
 
-            Country.Text = nnnn[0];
-            NameText.Text = nnnn[1];
-            Surname.Text = nnnn[2];
-            Age.Text = nnnn[3];
-            Sport.Text = nnnn[4];
+            Country.Text = selectedInfo[0];
+            NameText.Text = selectedInfo[1];
+            Surname.Text = selectedInfo[2];
+            Age.Text = selectedInfo[3];
+            Sport.Text = selectedInfo[4];
 
-            Gold.Text = nnnn[5];
-            Silver.Text = nnnn[6];
-            Bronze.Text = nnnn[7];
+            Gold.Text = selectedInfo[5];
+            Silver.Text = selectedInfo[6];
+            Bronze.Text = selectedInfo[7];
 
 
         }
@@ -63,15 +63,37 @@ namespace Kurs
 
         private void SaveBut_Click(object sender, EventArgs e)
         {
+            SaveBut.Enabled = false;
+
+            string[] infoList = { Country.Text, NameText.Text, Surname.Text, Age.Text, Sport.Text, Gold.Text, Silver.Text, Bronze.Text };
+            Vars.bdArray[Vars.CurrentNumber] = String.Join("_", infoList);
+        }
+
+        private void NewBut_Click(object sender, EventArgs e)
+        {
+            NewBut.Enabled = false;
+
+            string[] infoList = { Country.Text, NameText.Text, Surname.Text, Age.Text, Sport.Text, Gold.Text, Silver.Text, Bronze.Text };
+            Vars.bdArray.Add(String.Join("_", infoList));
+        }
+
+        private void DelBut_Click(object sender, EventArgs e)
+        {
+            DelBut.Enabled = false;
+
+            Vars.bdArray.Remove(Vars.bdArray[Vars.CurrentNumber]);
         }
 
 
-        int oldNumber = -1;
+
+
+
+        string oldData = "pass";
         private void SelectCheck_Tick(object sender, EventArgs e)
         {
-            if (!(Vars.CurrentNumber == oldNumber))
+            if (!(Vars.bdArray[Vars.CurrentNumber] == oldData))
             {
-                oldNumber = Vars.CurrentNumber;
+                oldData = Vars.bdArray[Vars.CurrentNumber];
                 SelectElement();
             }
         }

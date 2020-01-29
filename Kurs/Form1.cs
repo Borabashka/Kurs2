@@ -48,9 +48,9 @@ namespace Kurs
         }
         private void CreateDatabase_Click(object sender, EventArgs e)
         {
-            if (File.Exists(NameDatabase.Text + ".txt") == false)
+            if (!File.Exists(NameDatabase.Text + ".txt"))
             {
-                DataBase.CrDB(NameDatabase.Text, true);
+                File.Create(NameDatabase.Text + ".txt");
                 NameDatabase.Clear();
             }
         }

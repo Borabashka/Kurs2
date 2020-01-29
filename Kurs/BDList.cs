@@ -25,7 +25,20 @@ namespace Kurs
             BackBut.BackColor = Color.FromArgb(0, 0, 0, 0);
         }
 
+        public void UpdateBD(object sender, EventArgs e)
+        {
+            string path = NameDataBase.Text + ".txt";
+
+            // записываем новую бд
+            fileWorker.SaveBD(path);
+
+            (sender as Button).Enabled = true;
+            NameDatabase_TextChanged(null, null);
+        }
+
         
+
+
 
         public void DeleteList()
         {
@@ -58,6 +71,7 @@ namespace Kurs
 
             ElementsPanel.Visible = true;
 
+            // Обнуление перемнных
             tab1.SelectCheck.Enabled = true;
             ui.number = 0;
             ui.first = true;
@@ -74,17 +88,23 @@ namespace Kurs
 
                 Vars.bdArray = fileWorker.ReadBD(NameDataBase.Text + ".txt");
 
-                if (Vars.bdArray.Count <= 1)
+                if (Vars.bdArray.Count == 0)
                 {
                     BdInfo.Text = "Выбранная база данных пуста";
                     BdInfo.Visible = true;
                     ElementsPanel.Visible = false;
+
                     tab1.SelectCheck.Enabled = false;
+                    tab1.DelBut.Enabled = false;
+                    tab1.SaveBut.Enabled = false;
                 }
                 else
                 {
                     // TODO Create panels + unblock tabcontrol
                     CreatePanel_General();
+
+                    tab1.DelBut.Enabled = true;
+                    tab1.SaveBut.Enabled = true;
                 }
             }
             else
@@ -94,7 +114,10 @@ namespace Kurs
 
                 tab1.NewBut.Enabled = false;
                 ElementsPanel.Visible = false;
+
                 tab1.SelectCheck.Enabled = false;
+                tab1.DelBut.Enabled = false;
+                tab1.SaveBut.Enabled = false;
             }
         }
 
@@ -114,6 +137,11 @@ namespace Kurs
 
             tab1.Location = new Point(324, 69);
             tab1.BackColor = Color.FromArgb(125, 0, 0, 0);
+
+            tab1.SaveBut.Click += new EventHandler(UpdateBD);
+            tab1.NewBut.Click += new EventHandler(UpdateBD);
+            tab1.DelBut.Click += new EventHandler(UpdateBD);
+
 
             tab2.Location = new Point(324, 69);
             tab2.BackColor = Color.FromArgb(125, 0, 0, 0);

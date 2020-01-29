@@ -178,10 +178,12 @@ namespace Kurs
             this.NewBut.TabStop = false;
             this.NewBut.Text = "New";
             this.NewBut.UseVisualStyleBackColor = false;
+            this.NewBut.Click += new System.EventHandler(this.NewBut_Click);
             // 
             // DelBut
             // 
             this.DelBut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(165)))), ((int)(((byte)(240)))));
+            this.DelBut.Enabled = false;
             this.DelBut.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(201)))), ((int)(((byte)(201)))));
             this.DelBut.FlatAppearance.BorderSize = 0;
             this.DelBut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -193,10 +195,12 @@ namespace Kurs
             this.DelBut.TabStop = false;
             this.DelBut.Text = "Delete";
             this.DelBut.UseVisualStyleBackColor = false;
+            this.DelBut.Click += new System.EventHandler(this.DelBut_Click);
             // 
             // SaveBut
             // 
             this.SaveBut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(165)))), ((int)(((byte)(240)))));
+            this.SaveBut.Enabled = false;
             this.SaveBut.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(201)))), ((int)(((byte)(201)))));
             this.SaveBut.FlatAppearance.BorderSize = 0;
             this.SaveBut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
