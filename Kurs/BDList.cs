@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using Kurs.Classe;
 
 namespace Kurs
-{
+{//
     public partial class BDList : UserControl
     {
         FileWorker fileWorker = new FileWorker();
