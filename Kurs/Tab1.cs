@@ -17,7 +17,7 @@ namespace Kurs
         {
             InitializeComponent();
             InitializeImages();
-        }
+        }//frgv
 
         void InitializeImages()
         {
